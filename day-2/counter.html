@@ -18,11 +18,12 @@
    
     // var count= localStorage.getItem("countervalue")|| 0 ;
     var count;
-    if( localStorage.getItem("countervalue")==null)
+    if (localStorage.getItem("counterValue")==null)
     {
         count=0;
-    }else{
-        count= localStorage.getItem("countervalue")
+    } else 
+    {
+        count= localStorage.getItem("counterValue")
     }
    
     document.querySelector("h1").innerText=count;
