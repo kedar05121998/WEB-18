@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+    <style>
+         #container{
+          
+          display: flex;
+          gap: 20px;
+          width: 90%;
+          margin: auto;
+       }
+       p+img{
+           height:70px;
+           display: block;
+          margin: auto;
+           }
+           #container>div>p{
+               text-align: center;
+           }
+           #container>div>h3{
+               text-align: center;
+           }
+       h1{
+           font-weight: bold;
+           font-size: 40px;
+           text-align: center;
+       }
+       #container>div{
+           box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+           border-radius: 15px;
+       }
+       #container>div>img{
+           border-top-left-radius: 20px;
+           border-top-right-radius: 20px;
+       }
+    </style>
+</head>
+<body>
+    <h1>Strategic Investors</h1>
+  <div id="container"></div>
+</body>
+</html>
+
+<script>
+   var investorArr=JSON.parse(localStorage.getItem("investorData"))
+   console.log(investorArr)
+
+  investorArr.forEach(function(el){
+    var box=document.createElement("div")
+
+    var investor_avtar=document.createElement("img")
+    investor_avtar.setAttribute("src",el.image)
+
+    var name=document.createElement("h3")
+    name.innerText=el.name;
+
+    var role=document.createElement("p")
+    role.innerText=el.role;
+
+    var logo=document.createElement("img")
+    logo.setAttribute("src",el.logo)
+
+    box.append(investor_avtar,name,role,logo)
+
+    document.querySelector("#container").append(box)
+})
+</script>
+</script>
